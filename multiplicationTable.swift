@@ -38,7 +38,7 @@ assert(gs! > 0 && gs! <= 20, "Argument value must be between 1 and 20")
 
 var x = 1
 repeat {
-    if x == 1 { print("  ", terminator:"")}
+    if x == 1 { print("   ", terminator:"")}
     print("  ", terminator: "")
     x = x + 1
 }while (x <= gs! )
@@ -48,16 +48,21 @@ var y = 0
 
 x = 1
 repeat {
-    print(x, terminator: "  ")
+    print(x, terminator: "")
     y = 1
     repeat {
-        if (x*y >= 10) {
+        if (x*y < 10) {
             print(" ", terminator: "")
         }
-        
-        print(x*y, terminator: "  ")
+        if (x*y < 100) {
+            print(" ", terminator: "")
+        }
+        if(x*y < 1000){
+            print(" ", terminator: "")
+        print(x*y, terminator: "")
+    }
         y = y + 1
-    } while (y <= gs! )
+    } while (y <= gs! ) 
     print()
     x = x + 1
 } while (x <= gs! )
