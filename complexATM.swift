@@ -34,14 +34,20 @@ assert(Int(CommandLine.arguments[1]) != nil, "Argument must be an integer")
 let dollarValueRequested = Int(CommandLine.arguments[1])!
   assert(dollarValueRequested % 5 == 0, "Dollar value requested must be evenly divisible by $5.00")
 
-  print("ATM will now dispense $5.00  bills to deliver the sum of $\(dollarValueRequested).00")
+  print("ATM will now dispense $20.00 and $5.00 bills to deliver the sum of $\(dollarValueRequested).00")
 
-  let times = dollarValueRequested/5
+  let times20 = dollarValueRequested/20
+  let times5 = (dollarValueRequested - times20*20)/5
 
   var x = 0
-  while ( x < times ) {
-      print ("$5.00 or $20.00 dispensed")
+  while (x < times20) {
+      print("$20.00 has been deposited")
       x += 1
+  }
+
+  var y = 0
+  while (y < times5) {
+      print("$5.00 has been deposited")
+      y += 1
+  }
   
-     
-  }  

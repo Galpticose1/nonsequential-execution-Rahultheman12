@@ -1,8 +1,8 @@
 // Allen ISD Computer Science Assignment
 // Non-sequential Project | multiplicationTable
-// John Williams
+// Rahul Singh
 // Computer Science I, Period 1
-// 2018.01.23
+// 2018.01.29
 
 
 /*
@@ -36,12 +36,10 @@ assert(Int(CommandLine.arguments[1]) != nil, "Argument must be an integer")
 let gs = Int( CommandLine.arguments[1])
 assert(gs! > 0 && gs! <= 20, "Argument value must be between 1 and 20")
 
-var numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]
-
 var x = 1
 repeat {
-    if x == 1 { print("    ", terminator:"")}
-    print(numbers[x-1], terminator: "   ")
+    if x == 1 { print("  ", terminator:"")}
+    print("  ", terminator: "")
     x = x + 1
 }while (x <= gs! )
 print()
@@ -50,10 +48,14 @@ var y = 0
 
 x = 1
 repeat {
-    print(x, terminator: "   ")
+    print(x, terminator: "  ")
     y = 1
-    repeat { 
-        print(x*numbers[y-1], terminator: "   ")
+    repeat {
+        if (x*y >= 10) {
+            print(" ", terminator: "")
+        }
+        
+        print(x*y, terminator: "  ")
         y = y + 1
     } while (y <= gs! )
     print()
