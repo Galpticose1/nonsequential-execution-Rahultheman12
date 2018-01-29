@@ -1,6 +1,6 @@
 // Allen ISD Computer Science Assignment
 // Non-sequential Project | simpleATM
-// John Williams
+// Rahul Singh
 // Computer Science I, Period 1
 // 2018.01.23
 
@@ -38,3 +38,11 @@ print("ATM will now dispense $20.00 bills to deliver the sum of $\(dollarValueRe
 
 // Continue with your code here
 
+let times = dollarValueRequested/20
+
+var x = 0
+while ( x < times ) {
+    print ("$20.00 dispensed")
+    x += 1 
+
+}

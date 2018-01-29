@@ -29,4 +29,34 @@
 */
 
 // Continue with your code here
+assert(CommandLine.arguments.count > 1, "Exactly one argument is required")
+assert(Int(CommandLine.arguments[1]) != nil, "Argument must be an integer")
 
+
+let gs = Int( CommandLine.arguments[1])
+assert(gs! > 0 && gs! <= 20, "Argument value must be between 1 and 20")
+
+var numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]
+
+var x = 1
+repeat {
+    if x == 1 { print("    ", terminator:"")}
+    print(numbers[x-1], terminator: "   ")
+    x = x + 1
+}while (x <= gs! )
+print()
+
+var y = 0
+
+x = 1
+repeat {
+    print(x, terminator: "   ")
+    y = 1
+    repeat { 
+        print(x*numbers[y-1], terminator: "   ")
+        y = y + 1
+    } while (y <= gs! )
+    print()
+    x = x + 1
+} while (x <= gs! )
+print()
