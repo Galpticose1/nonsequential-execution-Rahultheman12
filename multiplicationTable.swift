@@ -48,7 +48,11 @@ var y = 0
 
 x = 1
 repeat {
-    print(x, terminator: "")
+    if x < 10 {
+        print("", x, terminator: " ")
+    } else {
+        print(x, terminator: " ")
+    }
     y = 1
     repeat {
         if (x*y < 10) {
