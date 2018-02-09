@@ -31,37 +31,27 @@
 assert(CommandLine.arguments.count == 2, "Exactly one argument is required")
 assert(Int(CommandLine.arguments[1]) != nil, "Argument must be an integer")
 
+
+func MoneyDeposit(MoneyDeposit:Int,  denomination:Int) -> Int {
+
+    print("ATM will now dispense $100.00, $20.00, and $5.00 bills to deliver to sum of $\(dollarValueRequested).00")
+    
+    var dollarsToDispense = MoneyDeposit
+    while (dollarsToDispense >= denomination){  
+        print("$\(denomination) has been dispensed")
+        dollarsToDispense -= denomination
+    }
+    return dollarsToDispense
+    
+}
+
 let dollarValueRequested = Int(CommandLine.arguments[1])!
 assert(dollarValueRequested % 5 == 0, "Dollar value requested must be evenly divisible by $5.00")
 
-func MoneyDeposit(MoneyDeposit:Int,  bill:Int) -> Int {
-
-    let bills100 = dollarValueRequested/100
-    let bills20 = dollarValueRequested - (bills100*20)/20
-    let bills5 = (dollarValueRequested - bills100*100)/25
-
-    
-    var x = 0
-    while (x < bills100){  
-    print("$100.00 has been dispensed")
-    x += 1
-    }
-
-    var  y = 0
-    while (y < bills20){  
-    print("$20.00 has been dispensed")
-    y += 1
-    }
-    
-    var z = 0
-    while (z < bills5){
-    print("$5.00 has been dispensed")
-    z += 1
-    }
-    print("ATM will now dispense $20.00 and $5.00 bills to deliver the sum of $\(dollarValueRequested).00")
-} 
-    
-  
+var dollarsToDispense = dollarValueRequested   
+dollarsToDispense = MoneyDeposit(MoneyDeposit: dollarsToDispense, denomination: 100)
+dollarsToDispense = MoneyDeposit(MoneyDeposit: dollarsToDispense, denomination: 20)
+dollarsToDispense = MoneyDeposit(MoneyDeposit: dollarsToDispense, denomination: 5)
 
  
   
