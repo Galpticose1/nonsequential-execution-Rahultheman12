@@ -32,22 +32,36 @@ assert(CommandLine.arguments.count == 2, "Exactly one argument is required")
 assert(Int(CommandLine.arguments[1]) != nil, "Argument must be an integer")
 
 let dollarValueRequested = Int(CommandLine.arguments[1])!
-  assert(dollarValueRequested % 5 == 0, "Dollar value requested must be evenly divisible by $5.00")
+assert(dollarValueRequested % 5 == 0, "Dollar value requested must be evenly divisible by $5.00")
 
-  print("ATM will now dispense $20.00 and $5.00 bills to deliver the sum of $\(dollarValueRequested).00")
+func MoneyDeposit(MoneyDeposit:Int,  bill:Int) -> Int {
 
-  let times20 = dollarValueRequested/20
-  let times5 = (dollarValueRequested - times20*20)/5
+    let bills100 = dollarValueRequested/100
+    let bills20 = dollarValueRequested - (bills100*20)/20
+    let bills5 = (dollarValueRequested - bills100*100)/25
 
-  var x = 0
-  while (x < times20) {
-      print("$20.00 has been deposited")
-      x += 1
-  }
+    
+    var x = 0
+    while (x < bills100){  
+    print("$100.00 has been dispensed")
+    x += 1
+    }
 
-  var y = 0
-  while (y < times5) {
-      print("$5.00 has been deposited")
-      y += 1
-  }
+    var  y = 0
+    while (y < bills20){  
+    print("$20.00 has been dispensed")
+    y += 1
+    }
+    
+    var z = 0
+    while (z < bills5){
+    print("$5.00 has been dispensed")
+    z += 1
+    }
+    print("ATM will now dispense $20.00 and $5.00 bills to deliver the sum of $\(dollarValueRequested).00")
+} 
+    
+  
+
+ 
   
