@@ -33,8 +33,6 @@ assert(Int(CommandLine.arguments[1]) != nil, "Argument must be an integer")
 
 
 func MoneyDeposit(MoneyDeposit:Int,  denomination:Int) -> Int {
-
-    print("ATM will now dispense $100.00, $20.00, and $5.00 bills to deliver to sum of $\(dollarValueRequested).00")
     
     var dollarsToDispense = MoneyDeposit
     while (dollarsToDispense >= denomination){  
@@ -42,16 +40,24 @@ func MoneyDeposit(MoneyDeposit:Int,  denomination:Int) -> Int {
         dollarsToDispense -= denomination
     }
     return dollarsToDispense
-    
 }
 
 let dollarValueRequested = Int(CommandLine.arguments[1])!
 assert(dollarValueRequested % 5 == 0, "Dollar value requested must be evenly divisible by $5.00")
 
-var dollarsToDispense = dollarValueRequested   
-dollarsToDispense = MoneyDeposit(MoneyDeposit: dollarsToDispense, denomination: 100)
-dollarsToDispense = MoneyDeposit(MoneyDeposit: dollarsToDispense, denomination: 20)
-dollarsToDispense = MoneyDeposit(MoneyDeposit: dollarsToDispense, denomination: 5)
+
+
+var dollarsToDispense = dollarValueRequested
+print("ATM will now dispense $100.00, $20.00, and $5.00 bills to deliver to sum of $\(dollarValueRequested).00")
+
+if dollarsToDispense >= 100 {
+    dollarsToDispense = MoneyDeposit(MoneyDeposit: dollarsToDispense, denomination: 100)}
+
+if dollarsToDispense >= 20 {
+    dollarsToDispense = MoneyDeposit(MoneyDeposit: dollarsToDispense, denomination: 20)}
+
+if dollarsToDispense >= 5 {
+    dollarsToDispense = MoneyDeposit(MoneyDeposit: dollarsToDispense, denomination: 5)}
 
  
   
